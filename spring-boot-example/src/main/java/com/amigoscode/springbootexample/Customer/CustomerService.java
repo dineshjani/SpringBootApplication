@@ -10,21 +10,28 @@ import com.amigoscode.springbootexample.exception.NotFoundException;
 
 @Service
 public class CustomerService {
-    private final CustomerRepo customerRepo;
+    // private final CustomerRepo customerRepo;
+    private final CustomerRepository customerRepository;
 
     // public CustomerService(@Qualifier("fake") CustomerRepo customerRepo){
     //     this.customerRepo = customerRepo;
     // }
-        @Autowired
-        public CustomerService(CustomerRepo customerRepo){
-        this.customerRepo = customerRepo;
+    //     @Autowired
+    //     public CustomerService(CustomerRepo customerRepo){
+    //     this.customerRepo = customerRepo;
+    // }
+
+    public CustomerService(CustomerRepository customerRepository){
+        this.customerRepository = customerRepository;
+
     }
     public List<Customer> getCustomer() {
-        return customerRepo.getCustomers();
+        return customerRepository.findAll();
     }
 
     Customer getCustomerById(Long Id ) {
-        return customerRepo.getCustomers().stream().filter(customer -> customer.getId().equals(Id)).findFirst().orElseThrow(() -> new NotFoundException("customer not found"));
+        // return getCustomer().stream().filter(customer -> customer.getId().equals(Id)).findFirst().orElseThrow(() -> new NotFoundException("customer not found"));
+        return customerRepository.findById(Id).orElseThrow(() -> new NotFoundException("customer not found"));
     }
     
 }
