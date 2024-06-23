@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 public class CustomerRepository implements CustomerRepo{
     @Override
     public List<Customer> getCustomers() {
-        return Collections.emptyList();
+                 return Arrays.asList(
+            new Customer(1L, "Todo", "123"));
      }
 }

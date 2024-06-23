@@ -21,8 +21,7 @@ public class CustomerService {
         this.customerRepo = customerRepo;
     }
     public List<Customer> getCustomer() {
-        return Arrays.asList(
-            new Customer(1L, "Todo"));
+        return customerRepo.getCustomers();
     }
     
 }
