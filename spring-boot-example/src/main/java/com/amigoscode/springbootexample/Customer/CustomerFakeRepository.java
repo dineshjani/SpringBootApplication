@@ -1,11 +1,12 @@
 package com.amigoscode.springbootexample.customer;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 
-@Component(value = "fake")
+@Repository(value = "fake")
 public class CustomerFakeRepository implements CustomerRepo {
     @Override
     public List<Customer> getCustomers() {
