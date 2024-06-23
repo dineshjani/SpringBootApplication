@@ -1,4 +1,4 @@
-package com.amigoscode.springbootexample.Customer;
+package com.amigoscode.springbootexample.customer;
 import java.util.List;
 
 import org.springframework.stereotype.Component;

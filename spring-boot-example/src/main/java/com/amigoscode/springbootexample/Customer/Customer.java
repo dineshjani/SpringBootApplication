@@ -1,4 +1,4 @@
-package com.amigoscode.springbootexample.Customer;
+package com.amigoscode.springbootexample.customer;
 
 public class Customer {
     private Long id;
