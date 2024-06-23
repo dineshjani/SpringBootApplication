@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Customer {
     private Long id;
     private String name;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     public Customer(Long id, String name, String password) {
@@ -39,4 +40,12 @@ public class Customer {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
 }
